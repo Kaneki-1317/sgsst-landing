@@ -11,8 +11,7 @@ function IconWhatsApp() {
 function WhatsAppButton() {
   return (
     <a
-      // TODO: reemplazar por el enlace real con el número oficial de la empresa
-      href="https://wa.me/3150606018"
+      href="https://api.whatsapp.com/send?phone=573014936649&text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n"
       target="_blank"
       rel="noopener noreferrer"
       className={styles.whatsapp}

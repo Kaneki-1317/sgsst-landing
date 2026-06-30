@@ -32,6 +32,7 @@ const plans = [
     ],
     cta: 'Empezar ahora',
     variant: 'outline',
+    whatsappMessage: 'Hola, quiero más información sobre el plan Básico de SG-SST.',
   },
   {
     name: 'Premium',
@@ -47,6 +48,7 @@ const plans = [
     ],
     cta: 'Contactar Consultor',
     variant: 'solid',
+    whatsappMessage: 'Hola, quiero más información sobre el plan Premium de SG-SST.',
   },
   {
     name: 'Gold',
@@ -60,8 +62,11 @@ const plans = [
     ],
     cta: 'Solicitar Cotización',
     variant: 'outline',
+    whatsappMessage: 'Hola, quiero solicitar una cotización para el plan Gold de SG-SST.',
   },
 ]
+
+const WHATSAPP_NUMBER = '573014936649'
 
 function Pricing() {
   return (
@@ -109,12 +114,14 @@ function Pricing() {
                 ))}
               </ul>
 
-              <button
-                type="button"
+              <a
+                href={`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(plan.whatsappMessage)}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`${styles.cta} ${plan.variant === 'solid' ? styles.ctaSolid : styles.ctaOutline}`}
               >
                 {plan.cta}
-              </button>
+              </a>
             </article>
           ))}
         </div>

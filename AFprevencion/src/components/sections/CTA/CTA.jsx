@@ -1,14 +1,6 @@
 import Container from '../../ui/Container/Container'
 import styles from './CTA.module.css'
 
-function IconMessage() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 8.4 8.4 0 0 1-4-1L3 20l1-4.5a8.4 8.4 0 0 1-1-4A8.5 8.5 0 0 1 11.5 3 8.5 8.5 0 0 1 21 11.5z" />
-    </svg>
-  )
-}
-
 function CTA() {
   return (
     <section id="contact" className={styles.cta} aria-labelledby="cta-title">
@@ -23,13 +15,14 @@ function CTA() {
           para cualquier auditoría con nuestro acompañamiento experto.
         </p>
         <div className={styles.actions}>
-          <button type="button" className={styles.ctaSolid}>
+          <a
+            href="https://api.whatsapp.com/send?phone=573014936649&text=Hola%2C%20quiero%20solicitar%20un%20diagn%C3%B3stico%20gratuito%20de%20SG-SST%20para%20mi%20empresa."
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.ctaSolid}
+          >
             Solicitar Diagnóstico Sin Costo
-          </button>
-          <button type="button" className={styles.ctaOutline}>
-            <IconMessage />
-            Hablar con un Consultor
-          </button>
+          </a>
         </div>
       </Container>
     </section>

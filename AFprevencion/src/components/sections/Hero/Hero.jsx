@@ -18,7 +18,14 @@ function Hero() {
             Ministerio de Trabajo.
           </p>
           <div className={styles.actions}>
-            <Button variant="primary">Solicitar diagnóstico gratuito</Button>
+            <Button
+              variant="primary"
+              href="https://api.whatsapp.com/send?phone=573014936649&text=Hola%2C%20quiero%20solicitar%20un%20diagn%C3%B3stico%20gratuito%20de%20SG-SST%20para%20mi%20empresa."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Solicitar diagnóstico gratuito
+            </Button>
           </div>
           <ul className={styles.badges}>
             {badges.map((badge) => (

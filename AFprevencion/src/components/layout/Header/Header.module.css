@@ -1,27 +1,104 @@
+/* ─── Header base ─────────────────────────────────────────── */
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
+  transition:
+    background-color 0.25s ease,
+    box-shadow 0.25s ease,
+    border-bottom-color 0.25s ease;
 }
 
+/* ─── Estado con scroll ────────────────────────────────────── */
+.headerScrolled {
+  background-color: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 12px rgba(15, 23, 42, 0.08);
+  border-bottom-color: rgba(15, 23, 42, 0.06);
+}
+
+/* ─── Contenedor interno ───────────────────────────────────── */
 .inner {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-block: var(--spacing-md);
+  transition: padding-block 0.25s ease;
 }
 
+.headerScrolled .inner {
+  padding-block: 0.5rem;
+}
+
+/* ─── Grupo de logo ────────────────────────────────────────── */
 .logoGroup {
+  position: relative;
+  height: 5rem;
   display: flex;
   align-items: center;
+  transition: height 0.25s ease;
+}
+
+.headerScrolled .logoGroup {
+  height: 1.75rem;
+}
+
+/* ─── Imágenes del logo (estado por defecto) ───────────────── */
+.logoImages {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.headerScrolled .logoImages {
+  opacity: 0;
+  transform: translateY(calc(-50% - 5px));
+  pointer-events: none;
 }
 
 .logo {
   height: 5rem;
   width: auto;
+  max-width: none;
 }
 
 .logo2 {
   height: 1.5rem;
   width: auto;
+  max-width: none;
 }
 
+/* ─── Texto del logo (estado con scroll) ───────────────────── */
+.logoText {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(calc(-50% + 6px));
+  opacity: 0;
+  white-space: nowrap;
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-secondary);
+  letter-spacing: -0.01em;
+  transition: opacity 0.25s ease 0.1s, transform 0.25s ease 0.1s;
+  pointer-events: none;
+}
+
+.headerScrolled .logoText {
+  opacity: 1;
+  transform: translateY(-50%);
+  pointer-events: auto;
+}
+
+.logoTextAccent {
+  color: var(--color-primary);
+}
