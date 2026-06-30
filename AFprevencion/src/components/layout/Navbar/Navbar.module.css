@@ -9,6 +9,32 @@
   gap: var(--spacing-lg);
 }
 
+.list a {
+  position: relative;
+  transition: color var(--transition-base);
+}
+
+.list a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-base);
+}
+
+.list a:hover {
+  color: var(--color-primary);
+}
+
+.list a:hover::after {
+  transform: scaleX(1);
+}
+
 .toggle {
   display: none;
   flex-direction: column;

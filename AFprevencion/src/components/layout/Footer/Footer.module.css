@@ -91,6 +91,12 @@
   background-color: var(--color-primary);
   color: #ffffff;
   cursor: pointer;
+  transition: filter var(--transition-base), transform var(--transition-base);
+}
+
+.submitButton:hover {
+  filter: brightness(0.9);
+  transform: translateY(-1px);
 }
 
 .srOnly {

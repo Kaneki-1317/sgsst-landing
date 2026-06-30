@@ -41,6 +41,7 @@
   font-size: var(--font-size-base);
   font-weight: 700;
   cursor: pointer;
+  transition: background-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
 }
 
 .ctaSolid {
@@ -49,8 +50,18 @@
   color: #0b2545;
 }
 
+.ctaSolid:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
 .ctaOutline {
   background-color: transparent;
   border: 1px solid #ffffff;
   color: #ffffff;
+}
+
+.ctaOutline:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
 }

@@ -19,7 +19,6 @@ function Hero() {
           </p>
           <div className={styles.actions}>
             <Button variant="primary">Solicitar diagnóstico gratuito</Button>
-            <Button variant="secondary">Hablar por WhatsApp</Button>
           </div>
           <ul className={styles.badges}>
             {badges.map((badge) => (

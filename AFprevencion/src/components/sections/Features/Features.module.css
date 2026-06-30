@@ -39,8 +39,14 @@
 
 .icon {
   flex-shrink: 0;
-  color: var(--color-secondary);
-  margin-top: 0.15rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background-color: rgba(26, 115, 232, 0.1);
+  color: var(--color-primary);
 }
 
 .itemTitle {

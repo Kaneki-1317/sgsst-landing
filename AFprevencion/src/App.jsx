@@ -1,5 +1,6 @@
 import Header from './components/layout/Header/Header'
 import Footer from './components/layout/Footer/Footer'
+import WhatsAppButton from './components/layout/WhatsAppButton/WhatsAppButton'
 import Hero from './components/sections/Hero/Hero'
 import Problems from './components/sections/Problems/Problems'
 import MoneyLeaks from './components/sections/MoneyLeaks/MoneyLeaks'
@@ -16,16 +17,17 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <Testimonials />
         <Problems />
         <MoneyLeaks />
         <Features />
         <Services />
         <Pricing />
-        <Testimonials />
         <FAQ />
         <CTA />
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   )
 }

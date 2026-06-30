@@ -22,7 +22,7 @@ const plans = [
   {
     name: 'Básico',
     tag: 'Implementación Inicial',
-    price: 'Desde $800k',
+    price: 'Desde $450k',
     priceSuffix: '/pago único',
     features: [
       { text: 'Diagnóstico Inicial', included: true },
@@ -74,6 +74,7 @@ function Pricing() {
           <p className={styles.subtitle}>
             Escalabilidad y cumplimiento garantizado.
           </p>
+          <span className={styles.hotBadge}>Planes desde $450.000</span>
         </div>
 
         <div className={styles.grid}>

@@ -6,7 +6,7 @@
   font-size: var(--font-size-base);
   font-weight: 600;
   cursor: pointer;
-  transition: background-color var(--transition-base);
+  transition: background-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
 }
 
 .primary {
@@ -14,8 +14,19 @@
   color: #ffffff;
 }
 
+.primary:hover {
+  filter: brightness(0.92);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(26, 115, 232, 0.3);
+}
+
 .secondary {
   background-color: transparent;
   color: var(--color-primary);
   border: 1px solid var(--color-primary);
+}
+
+.secondary:hover {
+  background-color: rgba(26, 115, 232, 0.08);
+  transform: translateY(-2px);
 }
