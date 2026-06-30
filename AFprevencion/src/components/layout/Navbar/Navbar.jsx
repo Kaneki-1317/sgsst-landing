@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import styles from './Navbar.module.css'
 
 const navLinks = [
@@ -12,12 +13,33 @@ const navLinks = [
 ]
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  function close() {
+    setIsOpen(false)
+  }
+
   return (
     <nav className={styles.navbar}>
-      <ul className={styles.list}>
+      <button
+        type="button"
+        className={styles.toggle}
+        aria-expanded={isOpen}
+        aria-controls="navbar-menu"
+        aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
+        onClick={() => setIsOpen((open) => !open)}
+      >
+        <span className={`${styles.toggleBar} ${isOpen ? styles.toggleBarOpen : ''}`} />
+        <span className={`${styles.toggleBar} ${isOpen ? styles.toggleBarOpen : ''}`} />
+        <span className={`${styles.toggleBar} ${isOpen ? styles.toggleBarOpen : ''}`} />
+      </button>
+
+      <ul id="navbar-menu" className={`${styles.list} ${isOpen ? styles.listOpen : ''}`}>
         {navLinks.map(({ label, href }) => (
           <li key={href}>
-            <a href={href}>{label}</a>
+            <a href={href} onClick={close}>
+              {label}
+            </a>
           </li>
         ))}
       </ul>
