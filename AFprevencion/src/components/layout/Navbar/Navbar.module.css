@@ -1,0 +1,9 @@
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.list {
+  display: flex;
+  gap: var(--spacing-lg);
+}

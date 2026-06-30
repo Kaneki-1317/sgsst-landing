@@ -1,0 +1,26 @@
+.header {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: var(--spacing-md);
+}
+
+.logoGroup {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 5rem;
+  width: auto;
+}
+
+.logo2 {
+  height: 1.5rem;
+  width: auto;
+}
+
