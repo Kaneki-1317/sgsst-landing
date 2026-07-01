@@ -38,7 +38,7 @@
 
 .description {
   font-size: var(--font-size-sm);
-  line-height: 1.6;
+  line-height: var(--leading-relaxed);
   max-width: 26rem;
 }
 

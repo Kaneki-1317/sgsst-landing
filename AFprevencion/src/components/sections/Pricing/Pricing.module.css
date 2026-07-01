@@ -7,47 +7,6 @@
   text-align: center;
 }
 
-.hotBadge {
-  margin-top: 1rem;
-  display: inline-flex;
-  align-items: center;
-  margin-bottom: var(--spacing-md);
-  border-radius: 0.2rem;
-  padding: 1.2rem 2rem;
-  background: linear-gradient(135deg, #fb923c, var(--color-accent));
-  color: #ffffff;
-  font-size: var(--font-size-sm);
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  animation: hotBadgeFloat 1s ease-in-out infinite, hotBadgeGlow 2.6s ease-in-out infinite;
-}
-
-@keyframes hotBadgeFloat {
-  0%,
-  100% {
-    transform: rotate(-2deg);
-  }
-  50% {
-    transform: rotate(2deg);
-  }
-}
-
-@keyframes hotBadgeGlow {
-  0%,
-  100% {
-    box-shadow: 0 8px 20px rgba(15, 18, 192, 0.3);
-  }
-  50% {
-    box-shadow: 0 12px 30px rgba(245, 158, 11, 0.55);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hotBadge {
-    animation: none;
-  }
-}
-
 .title {
   font-size: var(--font-size-2xl);
   font-weight: 700;
@@ -210,7 +169,7 @@
 }
 
 .ctaSolid:hover {
-  box-shadow: 0 14px 32px rgba(26, 115, 232, 0.4), 0 6px 16px rgba(245, 158, 11, 0.25);
+  box-shadow: var(--shadow-hover-brand);
 }
 
 @media (max-width: 1024px) {

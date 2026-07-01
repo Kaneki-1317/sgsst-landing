@@ -104,7 +104,7 @@ function Services() {
   return (
     <section id="services" className={styles.services} aria-labelledby="services-title">
       <Container>
-        <Reveal as="div" className={styles.header}>
+        <Reveal as="div" className={styles.header} duration={0.65}>
           <h2 id="services-title" className={styles.title}>
             Servicios Especializados
           </h2>
@@ -113,7 +113,7 @@ function Services() {
           </p>
         </Reveal>
 
-        <StaggerContainer as="div" className={styles.grid} staggerChildren={0.1}>
+        <StaggerContainer as="div" className={styles.grid} staggerChildren={0.12}>
           {services.map(({ icon: Icon, title, description, wide }) => (
             <AnimatedCard
               key={title}

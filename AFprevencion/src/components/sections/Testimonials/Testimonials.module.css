@@ -40,7 +40,7 @@
   right: var(--spacing-md);
   font-size: 5rem;
   font-weight: 700;
-  line-height: 1;
+  line-height: var(--leading-none);
   background: var(--gradient-brand-soft);
   -webkit-background-clip: text;
   background-clip: text;
@@ -91,7 +91,7 @@
   font-size: var(--font-size-sm);
   font-style: italic;
   color: var(--color-text-light);
-  line-height: 1.6;
+  line-height: var(--leading-relaxed);
 }
 
 @media (max-width: 1024px) {

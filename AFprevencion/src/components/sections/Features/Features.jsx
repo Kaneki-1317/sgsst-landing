@@ -1,6 +1,7 @@
 import Container from '../../ui/Container/Container'
 import Reveal from '../../motion/Reveal'
 import StaggerContainer from '../../motion/StaggerContainer'
+import { EASE_SNAPPY } from '../../motion/variants'
 import styles from './Features.module.css'
 
 const iconProps = {
@@ -143,14 +144,14 @@ function Features() {
     <section id="features" className={styles.features} aria-labelledby="features-title">
       <Container className={styles.inner}>
         <div className={styles.content}>
-          <Reveal as="h2" id="features-title" className={styles.title}>
+          <Reveal as="h2" id="features-title" className={styles.title} duration={0.65}>
             Te dejamos el SG-SST listo para soportar auditorías y operar sin
             improvisación.
           </Reveal>
 
           <StaggerContainer as="ul" className={styles.list} staggerChildren={0.06}>
             {features.map(({ icon: Icon, title, description }) => (
-              <Reveal as="li" key={title} className={styles.item} distance={20} duration={0.5}>
+              <Reveal as="li" key={title} className={styles.item} distance={20} duration={0.5} ease={EASE_SNAPPY}>
                 <span className={styles.icon}>
                   <Icon />
                 </span>
@@ -163,7 +164,7 @@ function Features() {
           </StaggerContainer>
         </div>
 
-        <Reveal as="div" className={styles.media} distance={24}>
+        <Reveal as="div" className={styles.media} distance={24} duration={0.75}>
           {/* TODO: reemplazar por <img> con la foto real (laptop + carpetas) cuando se entregue el archivo */}
           <div className={styles.imagePlaceholder} role="img" aria-label="Laptop con panel de gestión y carpetas de documentación" />
         </Reveal>

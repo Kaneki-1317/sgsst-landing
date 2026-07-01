@@ -39,13 +39,13 @@ function Testimonials() {
   return (
     <section id="testimonials" className={styles.testimonials} aria-labelledby="testimonials-title">
       <Container>
-        <Reveal as="h2" id="testimonials-title" className={styles.title}>
+        <Reveal as="h2" id="testimonials-title" className={styles.title} duration={0.65}>
           Confían en AF Prevención
         </Reveal>
 
         <StaggerContainer as="div" className={styles.grid} staggerChildren={0.1}>
           {testimonials.map(({ name, role, company, quote }) => (
-            <AnimatedCard key={name} className={styles.card}>
+            <AnimatedCard key={name} className={styles.card} distance={14} duration={0.5}>
               <div className={styles.header}>
                 {/* TODO: reemplazar por <img> con la foto real cuando se entregue el archivo */}
                 <span className={styles.avatar} aria-hidden="true">

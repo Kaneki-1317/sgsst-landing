@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
-import { viewportDefault } from './variants'
 import { StaggerProvider } from './StaggerContext'
+import { useEntranceProps } from './useEntrance'
 
 function StaggerContainer({
   children,
@@ -19,14 +19,10 @@ function StaggerContainer({
       transition: { staggerChildren, delayChildren },
     },
   }
-
-  const triggerProps =
-    trigger === 'mount'
-      ? { initial: 'hidden', animate: 'visible' }
-      : { initial: 'hidden', whileInView: 'visible', viewport: { once, amount: viewportDefault.amount } }
+  const entranceProps = useEntranceProps({ once, trigger })
 
   return (
-    <Component variants={containerVariants} className={className} {...triggerProps} {...rest}>
+    <Component variants={containerVariants} className={className} {...entranceProps} {...rest}>
       <StaggerProvider value>{children}</StaggerProvider>
     </Component>
   )

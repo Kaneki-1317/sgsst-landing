@@ -1,7 +1,7 @@
 import Container from '../../ui/Container/Container'
-import Reveal from '../../motion/Reveal'
 import StaggerContainer from '../../motion/StaggerContainer'
 import AnimatedCard from '../../motion/AnimatedCard'
+import AnimatedHeading from '../../motion/AnimatedHeading'
 import styles from './MoneyLeaks.module.css'
 
 const leaks = [
@@ -29,9 +29,14 @@ function MoneyLeaks() {
   return (
     <section id="money-leaks" className={styles.section} aria-labelledby="money-leaks-title">
       <Container>
-        <Reveal as="h2" id="money-leaks-title" className={styles.title}>
+        <AnimatedHeading
+          as="h2"
+          id="money-leaks-title"
+          className={styles.title}
+          emphasizeWords={['3']}
+        >
           Evita estas 3 fugas de dinero silenciosas
-        </Reveal>
+        </AnimatedHeading>
         <StaggerContainer as="div" className={styles.grid} staggerChildren={0.1}>
           {leaks.map(({ number, title, description }) => (
             <AnimatedCard key={number} className={styles.card}>

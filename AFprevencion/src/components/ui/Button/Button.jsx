@@ -1,28 +1,21 @@
-import { motion } from 'framer-motion'
-import { EASE } from '../../motion/variants'
+import AnimatedCTA from '../../motion/AnimatedCTA'
 import styles from './Button.module.css'
-
-const hoverProps = {
-  whileHover: { y: -3, scale: 1.02 },
-  whileTap: { scale: 0.98 },
-  transition: { duration: 0.2, ease: EASE },
-}
 
 function Button({ children, onClick, type = 'button', variant = 'primary', href, target, rel }) {
   const className = `${styles.button} ${styles[variant]}`
 
   if (href) {
     return (
-      <motion.a href={href} target={target} rel={rel} onClick={onClick} className={className} {...hoverProps}>
+      <AnimatedCTA as="a" href={href} target={target} rel={rel} onClick={onClick} className={className}>
         {children}
-      </motion.a>
+      </AnimatedCTA>
     )
   }
 
   return (
-    <motion.button type={type} onClick={onClick} className={className} {...hoverProps}>
+    <AnimatedCTA as="button" type={type} onClick={onClick} className={className}>
       {children}
-    </motion.button>
+    </AnimatedCTA>
   )
 }
 

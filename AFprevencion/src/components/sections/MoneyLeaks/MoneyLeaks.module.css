@@ -44,7 +44,7 @@
   background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  line-height: 1;
+  line-height: var(--leading-none);
   margin-bottom: var(--spacing-md);
 }
 
@@ -58,7 +58,7 @@
 .cardText {
   color: #a3b8da;
   font-size: var(--font-size-sm);
-  line-height: 1.6;
+  line-height: var(--leading-relaxed);
 }
 
 @media (max-width: 1024px) {

@@ -13,7 +13,7 @@
 .title {
   font-size: var(--font-size-2xl);
   font-weight: 700;
-  line-height: 1.3;
+  line-height: var(--leading-snug);
   color: var(--color-secondary);
 }
 
@@ -74,7 +74,7 @@
 .cardText {
   font-size: var(--font-size-sm);
   color: var(--color-text-light);
-  line-height: 1.5;
+  line-height: var(--leading-normal);
 }
 
 @media (max-width: 1024px) {

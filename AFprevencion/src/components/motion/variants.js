@@ -1,4 +1,8 @@
+// Curva "premium": decelera con calma. Para revelado de contenido (títulos, párrafos, cards, imágenes).
 export const EASE = [0.16, 1, 0.3, 1]
+
+// Curva "snappy": respuesta más inmediata. Para microinteracciones pequeñas (botones, CTAs, iconos).
+export const EASE_SNAPPY = [0.25, 0.46, 0.45, 0.94]
 
 export const viewportDefault = { once: true, amount: 0.2 }
 

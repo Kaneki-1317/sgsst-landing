@@ -6,6 +6,7 @@ import StaggerContainer from '../../motion/StaggerContainer'
 import Reveal from '../../motion/Reveal'
 import FloatingImage from '../../motion/FloatingImage'
 import { useParallax } from '../../../hooks/useParallax'
+import { EASE_SNAPPY } from '../../motion/variants'
 import styles from './Hero.module.css'
 
 const badges = ['Cumplimiento', 'Evidencias', 'Auditorías', 'Acompañamiento']
@@ -22,15 +23,15 @@ function Hero() {
 
       <Container className={styles.inner}>
         <StaggerContainer as="div" className={styles.content} staggerChildren={0.1} trigger="mount">
-          <Reveal as="h1" id="hero-title" className={styles.title}>
+          <Reveal as="h1" id="hero-title" className={styles.title} duration={0.65}>
             Evita sanciones, pérdidas y paradas operativas.
           </Reveal>
-          <Reveal as="p" className={styles.subtitle}>
+          <Reveal as="p" className={styles.subtitle} duration={0.75}>
             Implementamos y administramos tu SG-SST para que tu empresa cumpla
             la normativa, reduzca riesgos y esté preparada para auditorías del
             Ministerio de Trabajo.
           </Reveal>
-          <Reveal as="div" className={styles.actions}>
+          <div className={styles.actions}>
             <Button
               variant="primary"
               href="https://api.whatsapp.com/send?phone=573014936649&text=Hola%2C%20quiero%20solicitar%20un%20diagn%C3%B3stico%20gratuito%20de%20SG-SST%20para%20mi%20empresa."
@@ -39,8 +40,8 @@ function Hero() {
             >
               Solicitar diagnóstico gratuito
             </Button>
-          </Reveal>
-          <Reveal as="ul" className={styles.badges}>
+          </div>
+          <Reveal as="ul" className={styles.badges} duration={0.55} ease={EASE_SNAPPY}>
             {badges.map((badge) => (
               <li key={badge} className={styles.badge}>
                 {badge}
@@ -49,7 +50,7 @@ function Hero() {
           </Reveal>
         </StaggerContainer>
 
-        <Reveal as="div" className={styles.media} direction="up" distance={20} delay={0.25} trigger="mount">
+        <Reveal as="div" className={styles.media} direction="up" distance={28} duration={0.75} delay={0.25} trigger="mount">
           <FloatingImage amplitude={10} duration={6} className={styles.statCard}>
             <span className={styles.statNumber}>100%</span>
             <span className={styles.statLabel}>Cumplimiento Normativo</span>

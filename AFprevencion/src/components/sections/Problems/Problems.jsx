@@ -123,7 +123,7 @@ function Problems() {
   return (
     <section id="problems" className={styles.problems} aria-labelledby="problems-title">
       <Container>
-        <Reveal as="div" className={styles.header}>
+        <Reveal as="div" className={styles.header} duration={0.65}>
           <h2 id="problems-title" className={styles.title}>
             Lo que más le cuesta a una empresa no es implementar SG-SST.
             <br />
@@ -135,9 +135,9 @@ function Problems() {
           </p>
         </Reveal>
 
-        <StaggerContainer as="div" className={styles.grid} staggerChildren={0.1}>
+        <StaggerContainer as="div" className={styles.grid} staggerChildren={0.14}>
           {problems.map(({ icon: Icon, title, description }) => (
-            <AnimatedCard key={title} className={styles.card}>
+            <AnimatedCard key={title} className={styles.card} duration={0.65}>
               <span className={styles.icon}>
                 <Icon />
               </span>

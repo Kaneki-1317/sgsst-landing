@@ -34,7 +34,7 @@
 }
 
 .primary:hover {
-  box-shadow: 0 14px 32px rgba(26, 115, 232, 0.4), 0 6px 16px rgba(245, 158, 11, 0.25);
+  box-shadow: var(--shadow-hover-brand);
 }
 
 .secondary {
