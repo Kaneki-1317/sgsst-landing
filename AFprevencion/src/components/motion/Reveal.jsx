@@ -12,6 +12,7 @@ function Reveal({
   ease = EASE,
   blur = 0,
   scale,
+  rotate,
   hoverY,
   hoverScale,
   once = true,
@@ -27,11 +28,13 @@ function Reveal({
       ...baseVariants.hidden,
       ...(blur ? { filter: `blur(${blur}px)` } : {}),
       ...(scale !== undefined ? { scale } : {}),
+      ...(rotate !== undefined ? { rotate } : {}),
     },
     visible: {
       ...baseVariants.visible,
       ...(blur ? { filter: 'blur(0px)' } : {}),
       ...(scale !== undefined ? { scale: 1 } : {}),
+      ...(rotate !== undefined ? { rotate: 0 } : {}),
     },
   }
   const transition = { duration, delay, ease }

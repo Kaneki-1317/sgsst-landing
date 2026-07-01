@@ -4,6 +4,9 @@ export const EASE = [0.16, 1, 0.3, 1]
 // Curva "snappy": respuesta más inmediata. Para microinteracciones pequeñas (botones, CTAs, iconos).
 export const EASE_SNAPPY = [0.25, 0.46, 0.45, 0.94]
 
+// Curva "elástica": rebasa el destino y rebota antes de asentarse. Para efectos deliberadamente llamativos.
+export const EASE_BOUNCE = [0.34, 1.56, 0.64, 1]
+
 export const viewportDefault = { once: true, amount: 0.2 }
 
 export const DIRECTION_OFFSETS = {

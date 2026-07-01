@@ -6,7 +6,7 @@ import StaggerContainer from '../../motion/StaggerContainer'
 import Reveal from '../../motion/Reveal'
 import FloatingImage from '../../motion/FloatingImage'
 import { useParallax } from '../../../hooks/useParallax'
-import { EASE_SNAPPY } from '../../motion/variants'
+import { EASE_BOUNCE } from '../../motion/variants'
 import styles from './Hero.module.css'
 
 const badges = ['Cumplimiento', 'Evidencias', 'Auditorías', 'Acompañamiento']
@@ -23,10 +23,10 @@ function Hero() {
 
       <Container className={styles.inner}>
         <StaggerContainer as="div" className={styles.content} staggerChildren={0.1} trigger="mount">
-          <Reveal as="h1" id="hero-title" className={styles.title} duration={0.65}>
+          <Reveal as="h1" id="hero-title" className={styles.title} duration={1.1} distance={70} ease={EASE_BOUNCE}>
             Evita sanciones, pérdidas y paradas operativas.
           </Reveal>
-          <Reveal as="p" className={styles.subtitle} duration={0.75}>
+          <Reveal as="p" className={styles.subtitle} duration={1.1} distance={60} ease={EASE_BOUNCE}>
             Implementamos y administramos tu SG-SST para que tu empresa cumpla
             la normativa, reduzca riesgos y esté preparada para auditorías del
             Ministerio de Trabajo.
@@ -41,7 +41,7 @@ function Hero() {
               Solicitar diagnóstico gratuito
             </Button>
           </div>
-          <Reveal as="ul" className={styles.badges} duration={0.55} ease={EASE_SNAPPY}>
+          <Reveal as="ul" className={styles.badges} duration={0.9} distance={50} ease={EASE_BOUNCE}>
             {badges.map((badge) => (
               <li key={badge} className={styles.badge}>
                 {badge}
@@ -50,8 +50,18 @@ function Hero() {
           </Reveal>
         </StaggerContainer>
 
-        <Reveal as="div" className={styles.media} direction="up" distance={28} duration={0.75} delay={0.25} trigger="mount">
-          <FloatingImage amplitude={10} duration={6} className={styles.statCard}>
+        <Reveal
+          as="div"
+          className={styles.media}
+          direction="up"
+          distance={90}
+          duration={1.3}
+          delay={0.25}
+          rotate={-8}
+          ease={EASE_BOUNCE}
+          trigger="mount"
+        >
+          <FloatingImage amplitude={24} duration={3.5} rotate={5} className={styles.statCard}>
             <span className={styles.statNumber}>100%</span>
             <span className={styles.statLabel}>Cumplimiento Normativo</span>
           </FloatingImage>

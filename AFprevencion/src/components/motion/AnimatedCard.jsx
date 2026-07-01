@@ -1,31 +1,32 @@
 import { motion } from 'framer-motion'
-import { EASE, EASE_SNAPPY, makeSlideVariants } from './variants'
+import { EASE_BOUNCE, makeSlideVariants } from './variants'
 import { useEntranceProps } from './useEntrance'
 
 function AnimatedCard({
   children,
   as = 'article',
-  distance = 24,
+  distance = 60,
   delay = 0,
-  duration = 0.6,
-  ease = EASE,
+  duration = 0.9,
+  ease = EASE_BOUNCE,
+  rotate = 3,
   once = true,
   restScale = 1,
-  hoverY = -6,
-  hoverScale = 1.02,
-  tapScale = 0.98,
+  hoverY = -14,
+  hoverScale = 1.08,
+  tapScale = 0.92,
   className,
   ...rest
 }) {
   const Component = motion[as]
   const slide = makeSlideVariants('up', distance)
   const variants = {
-    hidden: { ...slide.hidden, scale: restScale },
-    visible: { ...slide.visible, scale: restScale },
+    hidden: { ...slide.hidden, scale: restScale, rotate },
+    visible: { ...slide.visible, scale: restScale, rotate: 0 },
   }
   const transition = { duration, delay, ease }
   // Gesture feedback (hover/tap) siempre responde rápido, independiente de cuánto dure la entrada.
-  const gestureTransition = { duration: 0.25, ease: EASE_SNAPPY }
+  const gestureTransition = { duration: 0.35, ease: EASE_BOUNCE }
   const hoverProps = {
     whileHover: { y: hoverY, scale: hoverScale, transition: gestureTransition },
     whileTap: { scale: tapScale, transition: gestureTransition },

@@ -137,7 +137,7 @@ function Problems() {
 
         <StaggerContainer as="div" className={styles.grid} staggerChildren={0.14}>
           {problems.map(({ icon: Icon, title, description }) => (
-            <AnimatedCard key={title} className={styles.card} duration={0.65}>
+            <AnimatedCard key={title} className={styles.card}>
               <span className={styles.icon}>
                 <Icon />
               </span>

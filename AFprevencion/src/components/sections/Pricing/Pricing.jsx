@@ -91,7 +91,7 @@ function Pricing() {
             <AnimatedCard
               key={plan.name}
               className={`${styles.card} ${plan.featured ? styles.cardFeatured : ''}`}
-              hoverScale={plan.featured ? 1.04 : 1.02}
+              hoverScale={plan.featured ? 1.16 : 1.08}
             >
               {plan.badge && <span className={styles.badge}>{plan.badge}</span>}
 

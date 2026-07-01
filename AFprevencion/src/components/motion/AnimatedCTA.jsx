@@ -1,30 +1,31 @@
 import { motion } from 'framer-motion'
-import { EASE, EASE_SNAPPY, makeSlideVariants } from './variants'
+import { EASE_BOUNCE, makeSlideVariants } from './variants'
 import { useEntranceProps } from './useEntrance'
 
 function AnimatedCTA({
   children,
   as = 'a',
-  distance = 20,
+  distance = 50,
   delay = 0,
-  duration = 0.55,
-  ease = EASE,
+  duration = 0.85,
+  ease = EASE_BOUNCE,
+  rotate = -6,
   once = true,
-  hoverY = -4,
-  hoverScale = 1.03,
-  tapScale = 0.98,
+  hoverY = -10,
+  hoverScale = 1.15,
+  tapScale = 0.88,
   className,
   ...rest
 }) {
   const Component = motion[as]
   const slide = makeSlideVariants('up', distance)
   const variants = {
-    hidden: { ...slide.hidden, scale: 0.95 },
-    visible: { ...slide.visible, scale: 1 },
+    hidden: { ...slide.hidden, scale: 0.85, rotate },
+    visible: { ...slide.visible, scale: 1, rotate: 0 },
   }
   const transition = { duration, delay, ease }
   // Gesture feedback (hover/tap) siempre responde rápido, independiente de cuánto dure la entrada.
-  const gestureTransition = { duration: 0.25, ease: EASE_SNAPPY }
+  const gestureTransition = { duration: 0.3, ease: EASE_BOUNCE }
   const hoverProps = {
     whileHover: { y: hoverY, scale: hoverScale, transition: gestureTransition },
     whileTap: { scale: tapScale, transition: gestureTransition },

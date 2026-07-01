@@ -45,7 +45,7 @@ function Testimonials() {
 
         <StaggerContainer as="div" className={styles.grid} staggerChildren={0.1}>
           {testimonials.map(({ name, role, company, quote }) => (
-            <AnimatedCard key={name} className={styles.card} distance={14} duration={0.5}>
+            <AnimatedCard key={name} className={styles.card}>
               <div className={styles.header}>
                 {/* TODO: reemplazar por <img> con la foto real cuando se entregue el archivo */}
                 <span className={styles.avatar} aria-hidden="true">
