@@ -1,4 +1,7 @@
 import Container from '../../ui/Container/Container'
+import Reveal from '../../motion/Reveal'
+import StaggerContainer from '../../motion/StaggerContainer'
+import AnimatedCard from '../../motion/AnimatedCard'
 import styles from './Problems.module.css'
 
 const iconProps = {
@@ -120,7 +123,7 @@ function Problems() {
   return (
     <section id="problems" className={styles.problems} aria-labelledby="problems-title">
       <Container>
-        <div className={styles.header}>
+        <Reveal as="div" className={styles.header}>
           <h2 id="problems-title" className={styles.title}>
             Lo que más le cuesta a una empresa no es implementar SG-SST.
             <br />
@@ -130,19 +133,19 @@ function Problems() {
             La improvisación genera huecos legales que se traducen en multas
             millonarias y cierres preventivos.
           </p>
-        </div>
+        </Reveal>
 
-        <div className={styles.grid}>
+        <StaggerContainer as="div" className={styles.grid} staggerChildren={0.1}>
           {problems.map(({ icon: Icon, title, description }) => (
-            <article key={title} className={styles.card}>
+            <AnimatedCard key={title} className={styles.card}>
               <span className={styles.icon}>
                 <Icon />
               </span>
               <h3 className={styles.cardTitle}>{title}</h3>
               <p className={styles.cardText}>{description}</p>
-            </article>
+            </AnimatedCard>
           ))}
-        </div>
+        </StaggerContainer>
       </Container>
     </section>
   )

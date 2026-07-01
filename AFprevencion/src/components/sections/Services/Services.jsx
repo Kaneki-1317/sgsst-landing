@@ -1,4 +1,7 @@
 import Container from '../../ui/Container/Container'
+import Reveal from '../../motion/Reveal'
+import StaggerContainer from '../../motion/StaggerContainer'
+import AnimatedCard from '../../motion/AnimatedCard'
 import styles from './Services.module.css'
 
 const iconProps = {
@@ -101,18 +104,18 @@ function Services() {
   return (
     <section id="services" className={styles.services} aria-labelledby="services-title">
       <Container>
-        <div className={styles.header}>
+        <Reveal as="div" className={styles.header}>
           <h2 id="services-title" className={styles.title}>
             Servicios Especializados
           </h2>
           <p className={styles.subtitle}>
             Soluciones integrales para la seguridad y salud en el trabajo.
           </p>
-        </div>
+        </Reveal>
 
-        <div className={styles.grid}>
+        <StaggerContainer as="div" className={styles.grid} staggerChildren={0.1}>
           {services.map(({ icon: Icon, title, description, wide }) => (
-            <article
+            <AnimatedCard
               key={title}
               className={`${styles.card} ${wide ? styles.cardWide : ''}`}
             >
@@ -121,9 +124,9 @@ function Services() {
               </span>
               <h3 className={styles.cardTitle}>{title}</h3>
               <p className={styles.cardText}>{description}</p>
-            </article>
+            </AnimatedCard>
           ))}
-        </div>
+        </StaggerContainer>
       </Container>
     </section>
   )

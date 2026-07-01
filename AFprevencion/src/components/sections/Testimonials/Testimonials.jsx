@@ -1,4 +1,7 @@
 import Container from '../../ui/Container/Container'
+import Reveal from '../../motion/Reveal'
+import StaggerContainer from '../../motion/StaggerContainer'
+import AnimatedCard from '../../motion/AnimatedCard'
 import styles from './Testimonials.module.css'
 
 const testimonials = [
@@ -36,13 +39,13 @@ function Testimonials() {
   return (
     <section id="testimonials" className={styles.testimonials} aria-labelledby="testimonials-title">
       <Container>
-        <h2 id="testimonials-title" className={styles.title}>
+        <Reveal as="h2" id="testimonials-title" className={styles.title}>
           Confían en AF Prevención
-        </h2>
+        </Reveal>
 
-        <div className={styles.grid}>
+        <StaggerContainer as="div" className={styles.grid} staggerChildren={0.1}>
           {testimonials.map(({ name, role, company, quote }) => (
-            <article key={name} className={styles.card}>
+            <AnimatedCard key={name} className={styles.card}>
               <div className={styles.header}>
                 {/* TODO: reemplazar por <img> con la foto real cuando se entregue el archivo */}
                 <span className={styles.avatar} aria-hidden="true">
@@ -56,9 +59,9 @@ function Testimonials() {
                 </div>
               </div>
               <p className={styles.quote}>{quote}</p>
-            </article>
+            </AnimatedCard>
           ))}
-        </div>
+        </StaggerContainer>
       </Container>
     </section>
   )

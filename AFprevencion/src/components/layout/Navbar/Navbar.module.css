@@ -21,7 +21,8 @@
   bottom: -4px;
   width: 100%;
   height: 2px;
-  background-color: var(--color-primary);
+  background: var(--gradient-brand);
+  border-radius: var(--radius-full);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform var(--transition-base);
@@ -52,7 +53,7 @@
   display: block;
   width: 100%;
   height: 2px;
-  background-color: var(--color-secondary);
+  background: var(--gradient-brand);
   border-radius: 2px;
   transition: transform var(--transition-base), opacity var(--transition-base);
 }

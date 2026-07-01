@@ -1,5 +1,10 @@
+import { motion } from 'framer-motion'
 import styles from './Pricing.module.css'
 import Container from '../../ui/Container/Container'
+import Reveal from '../../motion/Reveal'
+import StaggerContainer from '../../motion/StaggerContainer'
+import AnimatedCard from '../../motion/AnimatedCard'
+import { EASE } from '../../motion/variants'
 
 function IconCheck() {
   return (
@@ -72,7 +77,7 @@ function Pricing() {
   return (
     <section id="pricing" className={styles.pricing} aria-labelledby="pricing-title">
       <Container>
-        <div className={styles.header}>
+        <Reveal as="div" className={styles.header}>
           <h2 id="pricing-title" className={styles.title}>
             Planes Diseñados para su Empresa
           </h2>
@@ -80,13 +85,14 @@ function Pricing() {
             Escalabilidad y cumplimiento garantizado.
           </p>
           <span className={styles.hotBadge}>Planes desde $450.000</span>
-        </div>
+        </Reveal>
 
-        <div className={styles.grid}>
+        <StaggerContainer as="div" className={styles.grid} staggerChildren={0.1}>
           {plans.map((plan) => (
-            <article
+            <AnimatedCard
               key={plan.name}
               className={`${styles.card} ${plan.featured ? styles.cardFeatured : ''}`}
+              hoverScale={plan.featured ? 1.04 : 1.02}
             >
               {plan.badge && <span className={styles.badge}>{plan.badge}</span>}
 
@@ -114,17 +120,20 @@ function Pricing() {
                 ))}
               </ul>
 
-              <a
+              <motion.a
                 href={`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(plan.whatsappMessage)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${styles.cta} ${plan.variant === 'solid' ? styles.ctaSolid : styles.ctaOutline}`}
+                whileHover={{ y: -3, scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.2, ease: EASE }}
               >
                 {plan.cta}
-              </a>
-            </article>
+              </motion.a>
+            </AnimatedCard>
           ))}
-        </div>
+        </StaggerContainer>
       </Container>
     </section>
   )

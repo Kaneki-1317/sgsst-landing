@@ -1,7 +1,11 @@
 :root {
   --color-primary: #1a73e8;
+  --color-primary-dark: #0f4fb0;
+  --color-primary-light: #4f9bff;
   --color-secondary: #0f172a;
   --color-accent: #f59e0b;
+  --color-accent-dark: #c2760a;
+  --color-accent-light: #ffb84d;
   --color-text: #1a1a1a;
   --color-text-light: #6b7280;
   --color-bg: #ffffff;
@@ -9,6 +13,19 @@
   --color-bg-soft: #edf0fb;
   --color-border: #e5e7eb;
   --color-danger: #e23b53;
+
+  --gradient-brand: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 45%, var(--color-accent) 100%);
+  --gradient-brand-soft: linear-gradient(135deg, rgba(26, 115, 232, 0.12) 0%, rgba(245, 158, 11, 0.12) 100%);
+  --gradient-hero-bg: radial-gradient(60% 55% at 15% 10%, rgba(26, 115, 232, 0.16) 0%, rgba(26, 115, 232, 0) 60%),
+    radial-gradient(55% 50% at 90% 20%, rgba(245, 158, 11, 0.14) 0%, rgba(245, 158, 11, 0) 60%),
+    radial-gradient(70% 60% at 50% 100%, rgba(15, 23, 42, 0.06) 0%, rgba(15, 23, 42, 0) 60%);
+
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.12);
+  --shadow-xl: 0 24px 60px rgba(15, 23, 42, 0.16);
+  --shadow-glow-primary: 0 8px 24px rgba(26, 115, 232, 0.35);
+  --shadow-glow-accent: 0 8px 24px rgba(245, 158, 11, 0.35);
 
   --font-family-base: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
@@ -29,8 +46,13 @@
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 999px;
 
   --container-max-width: 1200px;
 
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
   --transition-base: 0.2s ease-in-out;
+  --transition-fast: 0.15s var(--ease-premium);
+  --transition-slow: 0.4s var(--ease-premium);
 }

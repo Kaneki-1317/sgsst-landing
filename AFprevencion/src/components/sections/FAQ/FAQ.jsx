@@ -1,5 +1,9 @@
 import { useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import Container from '../../ui/Container/Container'
+import Reveal from '../../motion/Reveal'
+import StaggerContainer from '../../motion/StaggerContainer'
+import { EASE } from '../../motion/variants'
 import styles from './FAQ.module.css'
 
 function IconChevronDown() {
@@ -27,17 +31,17 @@ function FAQ() {
   return (
     <section id="faq" className={styles.faq} aria-labelledby="faq-title">
       <Container>
-        <h2 id="faq-title" className={styles.title}>
+        <Reveal as="h2" id="faq-title" className={styles.title}>
           Preguntas Frecuentes
-        </h2>
+        </Reveal>
 
-        <div className={styles.list}>
+        <StaggerContainer as="div" className={styles.list} staggerChildren={0.06}>
           {questions.map((question, index) => {
             const isOpen = openIndex === index
             const panelId = `faq-panel-${index}`
 
             return (
-              <div key={question} className={styles.item}>
+              <Reveal as="div" key={question} className={styles.item} distance={16} duration={0.5}>
                 <button
                   type="button"
                   className={styles.question}
@@ -50,16 +54,27 @@ function FAQ() {
                     <IconChevronDown />
                   </span>
                 </button>
-                {isOpen && (
-                  <div id={panelId} className={styles.answer}>
-                    {/* TODO: reemplazar por el texto real de la respuesta cuando se entregue */}
-                    <p>Respuesta pendiente.</p>
-                  </div>
-                )}
-              </div>
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      id={panelId}
+                      className={styles.answer}
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: EASE }}
+                    >
+                      <div className={styles.answerInner}>
+                        {/* TODO: reemplazar por el texto real de la respuesta cuando se entregue */}
+                        <p>Respuesta pendiente.</p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </Reveal>
             )
           })}
-        </div>
+        </StaggerContainer>
       </Container>
     </section>
   )

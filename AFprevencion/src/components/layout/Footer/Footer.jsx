@@ -1,4 +1,8 @@
+import { motion } from 'framer-motion'
 import Container from '../../ui/Container/Container'
+import Reveal from '../../motion/Reveal'
+import StaggerContainer from '../../motion/StaggerContainer'
+import { EASE } from '../../motion/variants'
 import styles from './Footer.module.css'
 
 function IconShield() {
@@ -59,8 +63,8 @@ function Footer() {
   return (
     <footer className={styles.footer}>
       <Container>
-        <div className={styles.grid}>
-          <div className={styles.about}>
+        <StaggerContainer as="div" className={styles.grid} staggerChildren={0.08}>
+          <Reveal as="div" className={styles.about}>
             <div className={styles.logo}>
               <IconShield />
               <span>AF Prevención</span>
@@ -71,13 +75,19 @@ function Footer() {
               estabilidad operativa.
             </p>
             <div className={styles.iconRow}>
-              <IconMail />
-              <IconPhone />
-              <IconMapPin />
+              <motion.span whileHover={{ y: -2 }} transition={{ duration: 0.2, ease: EASE }}>
+                <IconMail />
+              </motion.span>
+              <motion.span whileHover={{ y: -2 }} transition={{ duration: 0.2, ease: EASE }}>
+                <IconPhone />
+              </motion.span>
+              <motion.span whileHover={{ y: -2 }} transition={{ duration: 0.2, ease: EASE }}>
+                <IconMapPin />
+              </motion.span>
             </div>
-          </div>
+          </Reveal>
 
-          <nav className={styles.column} aria-label="Enlaces">
+          <Reveal as="nav" className={styles.column} aria-label="Enlaces">
             <h3 className={styles.heading}>Enlaces</h3>
             <ul className={styles.list}>
               {links.map(({ label, href }) => (
@@ -86,9 +96,9 @@ function Footer() {
                 </li>
               ))}
             </ul>
-          </nav>
+          </Reveal>
 
-          <nav className={styles.column} aria-label="Legal">
+          <Reveal as="nav" className={styles.column} aria-label="Legal">
             <h3 className={styles.heading}>Legal</h3>
             <ul className={styles.list}>
               {legal.map((item) => (
@@ -97,9 +107,9 @@ function Footer() {
                 </li>
               ))}
             </ul>
-          </nav>
+          </Reveal>
 
-          <div className={styles.column}>
+          <Reveal as="div" className={styles.column}>
             <h3 className={styles.heading}>Suscripción Técnica</h3>
             <p className={styles.description}>
               Reciba actualizaciones sobre normatividad SG-SST en Colombia.
@@ -114,19 +124,26 @@ function Footer() {
                 placeholder="Su email"
                 className={styles.input}
               />
-              <button type="submit" className={styles.submitButton} aria-label="Suscribirse">
+              <motion.button
+                type="submit"
+                className={styles.submitButton}
+                aria-label="Suscribirse"
+                whileHover={{ y: -2, scale: 1.04 }}
+                whileTap={{ scale: 0.96 }}
+                transition={{ duration: 0.2, ease: EASE }}
+              >
                 <IconSend />
-              </button>
+              </motion.button>
             </form>
-          </div>
-        </div>
+          </Reveal>
+        </StaggerContainer>
 
-        <div className={styles.bottom}>
+        <Reveal as="div" className={styles.bottom} distance={12} amount={0.6}>
           <p className={styles.copyright}>
             &copy; 2026 AF Prevención. Todos los derechos reservados.
             Consultoría SG-SST Especializada. <a href="#">Colombia.</a>
           </p>
-        </div>
+        </Reveal>
       </Container>
     </footer>
   )
