@@ -15,10 +15,26 @@ function IconChevronDown() {
 }
 
 const questions = [
-  '¿Es obligatorio implementar el SG-SST?',
-  '¿Qué pasa si tengo una auditoría y no estoy al día?',
-  '¿Ustedes nos representan ante el Ministerio?',
-  '¿Cuánto tiempo tarda la implementación?',
+  {
+    question: '¿Es obligatorio implementar el SG-SST?',
+    answer:
+      'Sí. Toda empresa con uno o más trabajadores debe implementar el Sistema de Gestión de Seguridad y Salud en el Trabajo (SG-SST), de acuerdo con la normatividad colombiana. Su cumplimiento ayuda a prevenir riesgos laborales y evitar sanciones.',
+  },
+  {
+    question: '¿Qué pasa si tengo una auditoría y no estoy al día?',
+    answer:
+      'Si tu empresa no cumple con los requisitos del SG-SST, puede recibir requerimientos, sanciones económicas e incluso la suspensión de actividades en casos graves. Nosotros te ayudamos a prepararte para afrontar auditorías con tranquilidad.',
+  },
+  {
+    question: '¿Ustedes nos representan ante el Ministerio?',
+    answer:
+      'Sí. Brindamos acompañamiento durante visitas, requerimientos y procesos relacionados con las autoridades competentes, ofreciendo asesoría técnica para que tu empresa responda de manera adecuada.',
+  },
+  {
+    question: '¿Cuánto tiempo tarda la implementación?',
+    answer:
+      'Depende del tamaño de la empresa y del estado actual de cumplimiento. En la mayoría de los casos, la implementación inicial puede realizarse en pocas semanas, siguiendo un cronograma adaptado a las necesidades de cada organización.',
+  },
 ]
 
 function FAQ() {
@@ -36,7 +52,7 @@ function FAQ() {
         </Reveal>
 
         <StaggerContainer as="div" className={styles.list} staggerChildren={0.06}>
-          {questions.map((question, index) => {
+          {questions.map(({ question, answer }, index) => {
             const isOpen = openIndex === index
             const panelId = `faq-panel-${index}`
 
@@ -65,8 +81,7 @@ function FAQ() {
                       transition={{ duration: 0.3, ease: EASE_SNAPPY }}
                     >
                       <div className={styles.answerInner}>
-                        {/* TODO: reemplazar por el texto real de la respuesta cuando se entregue */}
-                        <p>Respuesta pendiente.</p>
+                        <p>{answer}</p>
                       </div>
                     </motion.div>
                   )}
