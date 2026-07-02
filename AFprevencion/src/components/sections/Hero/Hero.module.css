@@ -93,6 +93,14 @@
   justify-content: center;
 }
 
+.heroImage {
+  width: 100%;
+  max-width: 21rem;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 24px 32px rgba(15, 42, 58, 0.25));
+}
+
 .statCard {
   position: absolute;
   left: var(--spacing-md);

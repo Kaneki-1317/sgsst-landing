@@ -2,6 +2,7 @@ import Container from '../../ui/Container/Container'
 import Reveal from '../../motion/Reveal'
 import StaggerContainer from '../../motion/StaggerContainer'
 import { EASE_SNAPPY } from '../../motion/variants'
+import tioAndres from '../../../assets/images/TioAndres.webp'
 import styles from './Features.module.css'
 
 const iconProps = {
@@ -165,8 +166,13 @@ function Features() {
         </div>
 
         <Reveal as="div" className={styles.media} distance={24} duration={0.75}>
-          {/* TODO: reemplazar por <img> con la foto real (laptop + carpetas) cuando se entregue el archivo */}
-          <div className={styles.imagePlaceholder} role="img" aria-label="Laptop con panel de gestión y carpetas de documentación" />
+          <div className={styles.imagePlaceholder}>
+            <img
+              src={tioAndres}
+              alt="Consultor de SG-SST listo para acompañar tu empresa en auditorías"
+              className={styles.image}
+            />
+          </div>
         </Reveal>
       </Container>
     </section>

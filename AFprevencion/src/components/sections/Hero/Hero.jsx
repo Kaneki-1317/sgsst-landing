@@ -7,6 +7,7 @@ import Reveal from '../../motion/Reveal'
 import FloatingImage from '../../motion/FloatingImage'
 import { useParallax } from '../../../hooks/useParallax'
 import { EASE_BOUNCE } from '../../motion/variants'
+import tioAndresAlto from '../../../assets/images/TioAndresAlto.webp'
 import styles from './Hero.module.css'
 
 const badges = ['Cumplimiento', 'Evidencias', 'Auditorías', 'Acompañamiento']
@@ -61,6 +62,11 @@ function Hero() {
           ease={EASE_BOUNCE}
           trigger="mount"
         >
+          <img
+            src={tioAndresAlto}
+            alt="Trabajador con equipo de protección personal y arnés de seguridad"
+            className={styles.heroImage}
+          />
           <FloatingImage amplitude={24} duration={3.5} rotate={5} className={styles.statCard}>
             <span className={styles.statNumber}>100%</span>
             <span className={styles.statLabel}>Cumplimiento Normativo</span>

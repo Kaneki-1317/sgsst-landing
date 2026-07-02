@@ -77,24 +77,55 @@
 
 .media {
   position: relative;
-  flex: 1 1 420px;
+  flex: 1 1 380px;
 }
 
 .imagePlaceholder {
   position: relative;
   aspect-ratio: 1 / 1;
   width: 100%;
-  border-radius: var(--radius-lg);
-  background: linear-gradient(160deg, #2c5f63 0%, #0f3a44 60%, #0a2d3a 100%);
-  box-shadow: var(--shadow-xl);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 5%;
+}
+
+.imagePlaceholder::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 6%;
+  width: 68%;
+  height: 62%;
+  transform: translateX(-50%);
+  background: radial-gradient(closest-side, rgba(26, 115, 232, 0.16) 0%, rgba(245, 158, 11, 0.08) 55%, rgba(26, 115, 232, 0) 78%);
+  filter: blur(36px);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .imagePlaceholder::after {
   content: '';
   position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(135deg, rgba(26, 115, 232, 0.25) 0%, transparent 40%, rgba(245, 158, 11, 0.2) 100%);
+  left: 50%;
+  bottom: 6%;
+  width: 46%;
+  height: 1.5rem;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse, rgba(15, 23, 42, 0.28) 0%, rgba(15, 23, 42, 0) 75%);
+  filter: blur(4px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.image {
+  position: relative;
+  z-index: 1;
+  height: 104%;
+  width: auto;
+  max-width: 108%;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 18px rgba(15, 23, 42, 0.16));
 }
 
 @media (max-width: 900px) {
