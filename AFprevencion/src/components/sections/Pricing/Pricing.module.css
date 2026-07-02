@@ -13,6 +13,31 @@
   color: var(--color-secondary);
 }
 
+.priceHighlight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-sm);
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-accent-dark);
+  letter-spacing: -0.01em;
+}
+
+.priceHighlightIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  background-color: rgba(245, 158, 11, 0.14);
+  color: var(--color-accent);
+  font-size: 0.8rem;
+}
+
 .subtitle {
   margin-top: var(--spacing-sm);
   font-size: var(--font-size-base);

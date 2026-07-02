@@ -27,8 +27,6 @@ const plans = [
   {
     name: 'Básico',
     tag: 'Implementación Inicial',
-    price: 'Desde $450k',
-    priceSuffix: '/pago único',
     features: [
       { text: 'Diagnóstico Inicial', included: true },
       { text: 'Diseño de Políticas', included: true },
@@ -81,6 +79,10 @@ function Pricing() {
           <AnimatedHeading as="h2" id="pricing-title" className={styles.title}>
             Planes Diseñados para su Empresa
           </AnimatedHeading>
+          <Reveal as="p" className={styles.priceHighlight} delay={0.2} duration={0.6}>
+            <span className={styles.priceHighlightIcon} aria-hidden="true">✓</span>
+            Planes desde $450.000
+          </Reveal>
           <Reveal as="p" className={styles.subtitle} delay={0.35} duration={0.6}>
             Escalabilidad y cumplimiento garantizado.
           </Reveal>
@@ -98,12 +100,14 @@ function Pricing() {
               <h3 className={styles.planName}>{plan.name}</h3>
               <p className={styles.planTag}>{plan.tag}</p>
 
-              <p className={styles.price}>
-                {plan.price}
-                {plan.priceSuffix && (
-                  <span className={styles.priceSuffix}>{plan.priceSuffix}</span>
-                )}
-              </p>
+              {plan.price && (
+                <p className={styles.price}>
+                  {plan.price}
+                  {plan.priceSuffix && (
+                    <span className={styles.priceSuffix}>{plan.priceSuffix}</span>
+                  )}
+                </p>
+              )}
 
               <ul className={styles.features}>
                 {plan.features.map(({ text, included }) => (
