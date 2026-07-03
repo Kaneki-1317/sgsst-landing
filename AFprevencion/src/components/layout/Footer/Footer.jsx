@@ -3,15 +3,8 @@ import Container from '../../ui/Container/Container'
 import Reveal from '../../motion/Reveal'
 import StaggerContainer from '../../motion/StaggerContainer'
 import { EASE_SNAPPY } from '../../motion/variants'
+import logoMark from '../../../assets/icons/LOGO AF SIN FONDO-17.png'
 import styles from './Footer.module.css'
-
-function IconShield() {
-  return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" />
-    </svg>
-  )
-}
 
 function IconMail() {
   return (
@@ -26,23 +19,6 @@ function IconPhone() {
   return (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" />
-    </svg>
-  )
-}
-
-function IconMapPin() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 22s7-7.2 7-12a7 7 0 0 0-14 0c0 4.8 7 12 7 12z" />
-      <circle cx="12" cy="10" r="2.5" />
-    </svg>
-  )
-}
-
-function IconSend() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M3 11l18-8-8 18-2-7-8-3z" />
     </svg>
   )
 }
@@ -66,25 +42,14 @@ function Footer() {
         <StaggerContainer as="div" className={styles.grid} staggerChildren={0.08}>
           <Reveal as="div" className={styles.about}>
             <div className={styles.logo}>
-              <IconShield />
-              <span>AF Prevención</span>
+              <img src={logoMark} alt="AF" className={styles.logoMark} />
+              <span>Prevención</span>
             </div>
             <p className={styles.description}>
               Consultoría especializada en Seguridad y Salud en el Trabajo.
               Protegemos lo más valioso de su empresa: su gente y su
               estabilidad operativa.
             </p>
-            <div className={styles.iconRow}>
-              <motion.span whileHover={{ y: -2 }} transition={{ duration: 0.2, ease: EASE_SNAPPY }}>
-                <IconMail />
-              </motion.span>
-              <motion.span whileHover={{ y: -2 }} transition={{ duration: 0.2, ease: EASE_SNAPPY }}>
-                <IconPhone />
-              </motion.span>
-              <motion.span whileHover={{ y: -2 }} transition={{ duration: 0.2, ease: EASE_SNAPPY }}>
-                <IconMapPin />
-              </motion.span>
-            </div>
           </Reveal>
 
           <Reveal as="nav" className={styles.column} aria-label="Enlaces">
@@ -110,31 +75,28 @@ function Footer() {
           </Reveal>
 
           <Reveal as="div" className={styles.column}>
-            <h3 className={styles.heading}>Suscripción Técnica</h3>
-            <p className={styles.description}>
-              Reciba actualizaciones sobre normatividad SG-SST en Colombia.
+            <h3 className={styles.heading}>Contacto</h3>
+            <ul className={styles.contactList}>
+              <li className={styles.contactItem}>
+                <IconMail />
+                <a href="mailto:gerenciaafprevencion@gmail.com">
+                  gerenciaafprevencion@gmail.com
+                </a>
+              </li>
+              <li className={styles.contactItem}>
+                <IconMail />
+                <a href="mailto:comercialafprevencion@gmail.com">
+                  comercialafprevencion@gmail.com
+                </a>
+              </li>
+              <li className={styles.contactItem}>
+                <IconPhone />
+                <a href="tel:+573014936649">301 493 6649</a>
+              </li>
+            </ul>
+            <p className={styles.coverageText}>
+              Cobertura en Bucaramanga y su área metropolitana.
             </p>
-            <form className={styles.subscribeForm} onSubmit={(e) => e.preventDefault()}>
-              <label className={styles.srOnly} htmlFor="footer-email">
-                Su email
-              </label>
-              <input
-                id="footer-email"
-                type="email"
-                placeholder="Su email"
-                className={styles.input}
-              />
-              <motion.button
-                type="submit"
-                className={styles.submitButton}
-                aria-label="Suscribirse"
-                whileHover={{ y: -2, scale: 1.04 }}
-                whileTap={{ scale: 0.96 }}
-                transition={{ duration: 0.2, ease: EASE_SNAPPY }}
-              >
-                <IconSend />
-              </motion.button>
-            </form>
           </Reveal>
         </StaggerContainer>
 
