@@ -25,7 +25,12 @@ function Header() {
             <img src={logo2} alt="Prevención" className={styles.logo2} />
           </div>
           <span className={styles.logoText} aria-hidden="true">
-            <span className={styles.logoTextAccent}>AF</span> Prevención
+            <img src={logo} alt="" className={styles.logoTextMark} />
+            Prevención
+          </span>
+          <span className={styles.logoMobile}>
+            <img src={logo} alt="AF" className={styles.logoMobileMark} />
+            Prevención
           </span>
         </div>
         <Navbar />

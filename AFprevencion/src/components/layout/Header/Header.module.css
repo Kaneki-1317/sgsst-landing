@@ -93,6 +93,9 @@
   position: absolute;
   top: 50%;
   left: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
   transform: translateY(calc(-50% + 6px));
   opacity: 0;
   white-space: nowrap;
@@ -110,6 +113,50 @@
   pointer-events: auto;
 }
 
-.logoTextAccent {
-  color: var(--color-primary);
+.logoTextMark {
+  height: 1.85rem;
+  width: auto;
+  max-width: none;
+  display: block;
+}
+
+/* ─── Logo compacto (responsive: tablet y móvil) ────────────── */
+.logoMobile {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  align-items: center;
+  gap: 0.4rem;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-secondary);
+  letter-spacing: -0.01em;
+}
+
+.logoMobileMark {
+  height: 1.85rem;
+  width: auto;
+  max-width: none;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .logoGroup,
+  .headerScrolled .logoGroup {
+    height: 1.75rem;
+  }
+
+  .logoImages,
+  .headerScrolled .logoImages,
+  .logoText,
+  .headerScrolled .logoText {
+    display: none;
+  }
+
+  .logoMobile {
+    display: flex;
+  }
 }
