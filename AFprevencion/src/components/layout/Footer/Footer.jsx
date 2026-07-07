@@ -63,17 +63,6 @@ function Footer() {
             </ul>
           </Reveal>
 
-          <Reveal as="nav" className={styles.column} aria-label="Legal">
-            <h3 className={styles.heading}>Legal</h3>
-            <ul className={styles.list}>
-              {legal.map((item) => (
-                <li key={item}>
-                  <a href="#">{item}</a>
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-
           <Reveal as="div" className={styles.column}>
             <h3 className={styles.heading}>Contacto</h3>
             <ul className={styles.contactList}>
