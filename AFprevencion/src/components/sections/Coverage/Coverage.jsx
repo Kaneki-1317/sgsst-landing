@@ -52,7 +52,7 @@ const contactDetails = [
     body: (
       <p className={styles.itemText}>
         Cel / WhatsApp:{' '}
-        <a className={styles.link} href="tel:+573052101188">
+        <a className={styles.link} href="tel:3014936649">
           3014936649
         </a>
       </p>
