@@ -24,7 +24,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   align-items: start;
   justify-items: center;
   gap: var(--spacing-xl);
@@ -37,6 +37,7 @@
   align-items: center;
   gap: var(--spacing-sm);
   width: 100%;
+  min-width: 0;
 }
 
 .logoImg {
@@ -64,9 +65,17 @@
   color: #f4b400;
 }
 
+.review {
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+  text-align: center;
+  line-height: var(--leading-snug);
+  white-space: nowrap;
+}
+
 @media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
+  .review {
+    white-space: normal;
   }
 }
 

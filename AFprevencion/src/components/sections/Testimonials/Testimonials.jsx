@@ -10,11 +10,36 @@ import styles from './Testimonials.module.css'
 
 // Arreglo de empresas: agregar o quitar aquí para actualizar la galería de logos.
 const companies = [
-  { name: 'LaPlaca', logo: laPlaca, alt: 'Logo de LaPlaca, Car Customization Shop' },
-  { name: 'Dubai Fast Food', logo: dubaiFastFood, alt: 'Logo de Dubai Fast Food' },
-  { name: 'Ingeniería RZ', logo: ingenieriaRZ, alt: 'Logo de Ingeniería RZ' },
-  { name: 'Nexus Ingeniería y Soluciones', logo: nexus, alt: 'Logo de Nexus Ingeniería y Soluciones' },
-  { name: 'Mr. Server', logo: mrServer, alt: 'Logo de Mr. Server, Servicio Técnico' },
+  {
+    name: 'LaPlaca',
+    logo: laPlaca,
+    alt: 'Logo de LaPlaca, Car Customization Shop',
+    review: 'Servicio profesional, oportuno y confiable.',
+  },
+  {
+    name: 'Dubai Fast Food',
+    logo: dubaiFastFood,
+    alt: 'Logo de Dubai Fast Food',
+    review: 'Atención ágil y asesoría de alta calidad.',
+  },
+  {
+    name: 'Ingeniería RZ',
+    logo: ingenieriaRZ,
+    alt: 'Logo de Ingeniería RZ',
+    review: 'Un aliado estratégico para nuestra empresa.',
+  },
+  {
+    name: 'Nexus Ingeniería y Soluciones',
+    logo: nexus,
+    alt: 'Logo de Nexus Ingeniería y Soluciones',
+    review: 'Recomendados por su profesionalismo y compromiso.',
+  },
+  {
+    name: 'Mr. Server',
+    logo: mrServer,
+    alt: 'Logo de Mr. Server, Servicio Técnico',
+    review: 'Soluciones efectivas adaptadas a nuestras necesidades.',
+  },
 ]
 
 function IconStar() {
@@ -51,10 +76,11 @@ function Testimonials() {
         </Reveal>
 
         <StaggerContainer as="div" className={styles.grid} staggerChildren={0.08}>
-          {companies.map(({ name, logo, alt }) => (
+          {companies.map(({ name, logo, alt, review }) => (
             <Reveal key={name} as="div" className={styles.logoItem} distance={20}>
               <img src={logo} alt={alt} loading="lazy" decoding="async" className={styles.logoImg} />
               <StarRow />
+              <p className={styles.review}>{review}</p>
             </Reveal>
           ))}
         </StaggerContainer>
