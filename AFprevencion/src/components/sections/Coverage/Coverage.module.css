@@ -1,0 +1,142 @@
+.coverage {
+  background-color: var(--color-bg);
+  padding-block: var(--spacing-2xl);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 11fr 9fr;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.mapCol {
+  display: flex;
+  justify-content: center;
+}
+
+.map {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+}
+
+.country {
+  fill: var(--color-bg-soft);
+  stroke: var(--color-primary);
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.markerDot {
+  fill: var(--color-accent);
+  stroke: #ffffff;
+  stroke-width: 1.5;
+}
+
+.markerPulse {
+  fill: var(--color-accent);
+  opacity: 0.45;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: coverageMarkerPulse 2.4s ease-out infinite;
+}
+
+.markerLabel {
+  font-family: var(--font-family-base);
+  font-size: 11px;
+  font-weight: 600;
+  fill: var(--color-secondary);
+  stroke: #ffffff;
+  stroke-width: 3px;
+  paint-order: stroke;
+}
+
+.title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+
+.text {
+  margin-top: var(--spacing-md);
+  font-size: var(--font-size-base);
+  color: var(--color-text-light);
+  line-height: var(--leading-relaxed);
+}
+
+.contactList {
+  margin-top: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+  padding: 0;
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+}
+
+.contactIcon {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  color: var(--color-primary);
+}
+
+.itemTitle {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+
+.itemText {
+  font-style: normal;
+  font-size: 0.8125rem;
+  color: var(--color-text-light);
+  line-height: var(--leading-normal);
+}
+
+.link {
+  color: var(--color-text-light);
+  transition: color var(--transition-fast);
+}
+
+.link:hover {
+  color: var(--color-primary);
+}
+
+@keyframes coverageMarkerPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.45;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .markerPulse {
+    animation: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .map {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: var(--font-size-xl);
+  }
+}

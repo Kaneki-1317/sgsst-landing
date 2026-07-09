@@ -10,6 +10,7 @@ import Features from './components/sections/Features/Features'
 import Testimonials from './components/sections/Testimonials/Testimonials'
 import FAQ from './components/sections/FAQ/FAQ'
 import CTA from './components/sections/CTA/CTA'
+import Coverage from './components/sections/Coverage/Coverage'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Pricing />
         <FAQ />
         <CTA />
+        <Coverage />
       </main>
       <Footer />
       <WhatsAppButton />
