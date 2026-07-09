@@ -139,3 +139,9 @@
     grid-auto-flow: row;
   }
 }
+
+@media (max-width: 640px) {
+  .imagePlaceholder {
+    aspect-ratio: 3 / 4;
+  }
+}
