@@ -1,0 +1,59 @@
+.instagram {
+  position: fixed;
+  right: var(--spacing-lg);
+  /* stacked above the WhatsApp button (bottom: spacing-lg, height 3.5rem) plus a gap */
+  bottom: calc(var(--spacing-lg) + 3.5rem + var(--spacing-md));
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  box-shadow: var(--shadow-lg);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  animation: instagramAppear 0.4s var(--ease-premium) both;
+}
+
+.instagram:hover,
+.instagram:focus-visible {
+  transform: translateY(-2px) scale(1.08);
+  box-shadow: var(--shadow-xl);
+}
+
+.icon {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+@keyframes instagramAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .instagram {
+    animation: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .instagram {
+    width: 3.25rem;
+    height: 3.25rem;
+    right: var(--spacing-md);
+    bottom: calc(var(--spacing-md) + 3rem + var(--spacing-sm));
+  }
+
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
