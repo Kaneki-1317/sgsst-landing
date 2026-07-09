@@ -1,6 +1,6 @@
 import styles from './InstagramFloatingButton.module.css'
 
-const INSTAGRAM_URL = 'https://instagram.com/afprevencion'
+const INSTAGRAM_URL = 'https://www.instagram.com/af_prevencion?igsh=ZGJkOXdvNThvYXM5&utm_source=qr'
 
 function IconInstagram() {
   return (
