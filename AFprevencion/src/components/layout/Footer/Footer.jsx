@@ -84,7 +84,7 @@ function Footer() {
               </li>
             </ul>
             <p className={styles.coverageText}>
-              Cobertura en Bucaramanga y su área metropolitana.
+              Cobertura en todo el país.
             </p>
           </Reveal>
         </StaggerContainer>

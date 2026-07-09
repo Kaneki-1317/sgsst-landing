@@ -19,15 +19,6 @@ const contactIconProps = {
   'aria-hidden': true,
 }
 
-function IconMapPin({ className }) {
-  return (
-    <svg {...contactIconProps} className={className}>
-      <path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z" />
-      <circle cx="12" cy="9" r="2.5" />
-    </svg>
-  )
-}
-
 function IconPhone({ className }) {
   return (
     <svg {...contactIconProps} className={className}>
@@ -52,7 +43,7 @@ const contactDetails = [
     body: (
       <p className={styles.itemText}>
         Cel / WhatsApp:{' '}
-        <a className={styles.link} href="tel:3014936649">
+        <a className={styles.link} href="tel:+573014936649">
           3014936649
         </a>
       </p>
