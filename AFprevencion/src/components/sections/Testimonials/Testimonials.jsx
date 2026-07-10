@@ -6,6 +6,7 @@ import dubaiFastFood from '../../../assets/images/DubaiFastFood.jpeg'
 import ingenieriaRZ from '../../../assets/images/IngeneriaRZ.jpeg'
 import nexus from '../../../assets/images/Nexuz.jpeg'
 import mrServer from '../../../assets/images/MrServer.png'
+import pintoCol from '../../../assets/images/PintoCol.png'
 import styles from './Testimonials.module.css'
 
 // Arreglo de empresas: agregar o quitar aquí para actualizar la galería de logos.
@@ -39,6 +40,12 @@ const companies = [
     logo: mrServer,
     alt: 'Logo de Mr. Server, Servicio Técnico',
     review: 'Soluciones efectivas adaptadas a nuestras necesidades.',
+  },
+  {
+    name: 'Pinturas PintoCol',
+    logo: pintoCol,
+    alt: 'Logo de Pinturas PintoCol',
+    review: 'Excelente acompañamiento en seguridad y salud en el trabajo.',
   },
 ]
 
